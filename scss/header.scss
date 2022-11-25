@@ -1,18 +1,74 @@
 .Header {
-    border-bottom: 1px solid #000;
-    .container {
-        //normalde div block element olduğu için altalta yazıldı
-        //elemanlar yanyana gelir, esnek kutu modeline geçerler
-        display: flex;
-        //dikeyde ortalar
+  border-bottom: 1px solid #000;
+  .container {
+    //normalde div block element olduğu için altalta yazıldı
+    //elemanlar yanyana gelir, esnek kutu modeline geçerler
+    display: flex;
+    //dikeyde ortalar
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &-logo {
+    img {
+      width: 144px;
+    }
+  }
+
+  &-menu {
+    //en sağa alır
+    margin-left: auto;
+    //yanyana dizer
+    display: flex;
+
+    //inline elementler yükseklik ve genişlik alamaz,
+    //yani a elementi, bu sebeple display:flex kullanıldı
+    &-user {
+      display: flex;
+      margin-right: 10px;
+      a {
+        //yazıları ortalamak için:
+        display: inline-flex;
         align-items: center;
-        padding: 20px 0;
+
+        padding-left: 20px;
+        padding-right: 20px;
+        height: $finger-size;
+        &:hover {
+          background-color: #eee;
+        }
+      }
     }
 
-    &-menu {
-        //en sağa alır
-        margin-left: auto;
-        //yanyana dizer
-        display: flex;
+    &-helper {
+      margin-left: 20px;
+      display: flex;
+
+      select {
+        //stili sıfırlar
+        appearance: none;
+        border: 1px solid #E0E6F1;
+        background-color: transparent;
+        padding-right: 10px;
+        padding-left: 10px;
+        border-radius: 0;
+        color: $color-navy;
+        height: $finger-size;
+        
+        //1. elemanı
+        &:nth-child(1) {
+          border-bottom-left-radius: $border-radius;
+          border-top-left-radius: $border-radius;
+        }
+        //2.elemanı
+        &:nth-child(2) {
+          //2 tane border üstüste geldiği için, birini sildik
+          border-left: 0;
+          border-bottom-right-radius: $border-radius;
+          border-top-right-radius: $border-radius;
+        }
+      }
     }
+  }
 }

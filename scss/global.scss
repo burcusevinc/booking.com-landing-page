@@ -1,9 +1,31 @@
 // her yere etki edecek kod parçacıkları oluşturulur
 
 .container {
-    //max uzunluğu, variable'da tanımlanan değişken kadar olur
-    max-width: $max-width;
-    //containerı sayfanın ortasına konumladık
-    margin-left: auto;
-    margin-right: auto;
+  //max uzunluğu, variable'da tanımlanan değişken kadar olur
+  max-width: $max-width;
+  //containerı sayfanın ortasına konumladık
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//sayfadaki tüm a elementlerine etki edecek:
+a {
+  color: $color-navy;
+}
+
+body {
+  font-family: $font-family;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  height: $finger-size;
+  background-color: $color-blue;
+  color: #fff;
+  font-weight: bold;
+  border-radius: $border-radius;
 }
