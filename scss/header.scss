@@ -1,0 +1,18 @@
+.Header {
+    border-bottom: 1px solid #000;
+    .container {
+        //normalde div block element olduğu için altalta yazıldı
+        //elemanlar yanyana gelir, esnek kutu modeline geçerler
+        display: flex;
+        //dikeyde ortalar
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    &-menu {
+        //en sağa alır
+        margin-left: auto;
+        //yanyana dizer
+        display: flex;
+    }
+}

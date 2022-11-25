@@ -1,0 +1,9 @@
+// her yere etki edecek kod parçacıkları oluşturulur
+
+.container {
+    //max uzunluğu, variable'da tanımlanan değişken kadar olur
+    max-width: $max-width;
+    //containerı sayfanın ortasına konumladık
+    margin-left: auto;
+    margin-right: auto;
+}

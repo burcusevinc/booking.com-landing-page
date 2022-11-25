@@ -1,0 +1,25 @@
+{
+    "name": "booking.com",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "gulp": "^4.0.2"
+    },
+    "dependencies": {
+      "browser-sync": "^2.27.7",
+      "express": "^4.17.2",
+      "gulp": "^4.0.2",
+      "gulp-autoprefixer": "^8.0.0",
+      "gulp-pug": "^5.0.0",
+      "gulp-sass": "^5.1.0",
+      "normalize.css": "^8.0.1",
+      "sass": "^1.49.7"
+    },
+    "description": ""
+  }
