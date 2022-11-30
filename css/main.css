@@ -373,6 +373,15 @@ a {
   color: #083B87;
 }
 
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -397,6 +406,7 @@ body {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  height: 64px;
 }
 .Header-logo img {
   width: 144px;

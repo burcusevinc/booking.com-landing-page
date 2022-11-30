@@ -13,6 +13,16 @@ a {
   color: $color-navy;
 }
 
+.icon {
+  display: inline-block;
+  width: 1em; //16px
+  height: 1em;
+  stroke-width: 0;
+  //içinde bulunduğu elementin rengini alır: currentColor
+  stroke: currentColor;
+  fill: currentColor;
+}
+
 body {
   font-family: $font-family;
 }

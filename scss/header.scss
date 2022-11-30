@@ -8,6 +8,7 @@
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    height: 64px;
   }
 
   &-logo {
@@ -39,6 +40,10 @@
           background-color: #eee;
         }
       }
+    }
+
+    &-switch {
+      // icon classında currentColor kullanıldığı için, svg içine renk vermeye gerek yok
     }
 
     &-helper {

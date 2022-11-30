@@ -11,6 +11,18 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+        <!-- Sayfa içinde görünmeyecek ancak sayfada var olacak, absolute ve hidden değerleri verildi. -->
+        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0;
+            overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- svg icindeki defs: görünmez alandır -->
+            <defs>
+                <symbol id="icon-menu" viewBox="0 0 32 32">
+                    <path d="M2 6h28v6h-28zM2 14h28v6h-28zM2 22h28v6h-28z"></path>
+                </symbol>
+            </defs>
+        </svg>
+
         <header class="Header">
             <div class="container">
                 <a class="Header-logo" href="">
@@ -22,7 +34,13 @@
                         <a href="">Register</a>
                         <a href="">Sign In</a>
                     </div>
-
+                    <button class="Header-menu-switch" type="button">
+                        <!-- svg'yi kullanmak istediğimiz yere yazılır: -->
+                        <svg class="icon icon-menu">
+                            <!-- id'si icon-menu olan svg'yi alıp, bu kısıma koyar: -->
+                            <use xlink:href="#icon-menu"></use>
+                        </svg>
+                    </button>
                     <a class="button" href="">List your property</a>
                     <div class="Header-menu-helper">
                         <select>
