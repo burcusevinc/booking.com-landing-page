@@ -28,20 +28,21 @@
                 <a class="Header-logo" href="">
                     <img src="img/site-logo.png" alt="">
                 </a>
+                <button class="Header-switch" type="button">
+                    <!-- svg'yi kullanmak istediğimiz yere yazılır: -->
+                    <svg class="icon icon-menu">
+                        <!-- id'si icon-menu olan svg'yi alıp, bu kısıma koyar: -->
+                        <use xlink:href="#icon-menu"></use>
+                    </svg>
+                </button>
 
                 <div class="Header-menu">
                     <div class="Header-menu-user">
                         <a href="">Register</a>
                         <a href="">Sign In</a>
                     </div>
-                    <button class="Header-menu-switch" type="button">
-                        <!-- svg'yi kullanmak istediğimiz yere yazılır: -->
-                        <svg class="icon icon-menu">
-                            <!-- id'si icon-menu olan svg'yi alıp, bu kısıma koyar: -->
-                            <use xlink:href="#icon-menu"></use>
-                        </svg>
-                    </button>
-                    <a class="button" href="">List your property</a>
+
+                    <a class="Header-menu-property button" href="">List your property</a>
                     <div class="Header-menu-helper">
                         <select>
                             <option value="en">En</option>
@@ -53,5 +54,7 @@
                 </div>
             </div>
         </header>
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

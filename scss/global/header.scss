@@ -1,14 +1,13 @@
 .Header {
-  border-bottom: 1px solid #000;
   .container {
     //normalde div block element olduğu için altalta yazıldı
     //elemanlar yanyana gelir, esnek kutu modeline geçerler
     display: flex;
     //dikeyde ortalar
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
     height: 64px;
+    
+    position: relative;
   }
 
   &-logo {
@@ -17,21 +16,64 @@
     }
   }
 
-  &-menu {
-    //en sağa alır
+  //açılır menü svg'si, mobilde gözükmeli
+  &-switch {
+    //sola yasladık:
     margin-left: auto;
-    //yanyana dizer
-    display: flex;
+    background: transparent;
+    //include : mq mixin'ini getir.
+    //default olarak, tablet mixini çalışır: min-width:768px olunca gözükmez
+    @include mq {
+      display: none;
+    }
+  }
+
+  //yanyana menü mobilde gözükmeyecek
+  &-menu {
+    //768px ve altında menü gözükmeyecek.
+    display: none;
+    //min-width 768 px olunca menü gözükecek.
+    //containerı baz alması için, containera position:relative verdik.
+    //serbest konumlandırma yapmak için:
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding-right: $gutter;
+    padding-left: $gutter;
+    padding-bottom: 20px;
+
+    
+    //dikey hizalama:
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 20px 30px rgba(black, .2);
+
+    //görünür olduğunda display:flex özelliği alır.
+      .Header.menu-show & {
+        display: flex;
+      }
+
+    @include mq("tablet") {
+      //en sağa alır
+      margin-left: auto;
+      //yanyana dizer
+      display: flex;
+    }
 
     //inline elementler yükseklik ve genişlik alamaz,
     //yani a elementi, bu sebeple display:flex kullanıldı
     &-user {
+      width: 100%;
       display: flex;
       margin-right: 10px;
+      flex-direction: column;
+      align-items: center;
       a {
         //yazıları ortalamak için:
         display: inline-flex;
         align-items: center;
+        justify-content: center;
 
         padding-left: 20px;
         padding-right: 20px;
@@ -42,25 +84,32 @@
       }
     }
 
-    &-switch {
-      // icon classında currentColor kullanıldığı için, svg içine renk vermeye gerek yok
+    //buton
+    &-property {
+      margin-top: 20px;
+      justify-content: center;
     }
 
     &-helper {
-      margin-left: 20px;
+      margin-top: 20px;
       display: flex;
+      justify-content: center;
+
+      @include mq {
+        margin-left: 20px;
+      }
 
       select {
         //stili sıfırlar
         appearance: none;
-        border: 1px solid #E0E6F1;
+        border: 1px solid #e0e6f1;
         background-color: transparent;
         padding-right: 10px;
         padding-left: 10px;
         border-radius: 0;
         color: $color-navy;
         height: $finger-size;
-        
+
         //1. elemanı
         &:nth-child(1) {
           border-bottom-left-radius: $border-radius;

@@ -1,0 +1,26 @@
+// responsive işlemlerin yapıldığı yer
+
+
+// boyutlara göre media query işlemleri yapılır:
+//mq: media query
+//default değeri: "tablet"
+@mixin mq($width: "tablet") {
+  //width değeri tablet olduğu zaman, min-width:768px alınır
+  @if ($width == "tablet") {
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+        //include edildiği yerde, kodun içeriğinde ne yazıyorsa onu kullan:
+      @content;
+    }
+  } @else if ($width == "desktop") {
+    //Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if ($width == "large") {
+    // X-Large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        @content
+    }
+  }
+}
