@@ -1,13 +1,15 @@
 .Header {
+  border-bottom: 1px solid #ddd;
+  height: 68px;
   .container {
     //normalde div block element olduğu için altalta yazıldı
     //elemanlar yanyana gelir, esnek kutu modeline geçerler
     display: flex;
     //dikeyde ortalar
     align-items: center;
-    height: 64px;
-    
+
     position: relative;
+    height: 100%;
   }
 
   &-logo {

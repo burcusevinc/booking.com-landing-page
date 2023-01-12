@@ -1,14 +1,18 @@
 // maksimum genişlik, en fazla 1200 olabilir sayfa küçüldüğünde küçülebilir :
-$max-width :1200px;
+$max-width :1140px;
 //grid yapısında iki kolonun arasındaki boşluklar (iki kutunun arası) :
 $gutter:20px;
 //parmak boyutu, mobil cihazlara dokunurken:
 //rahat tıklamaya yarar:
 $finger-size:40px;
 $border-radius:3px;
+$font-size:16px;
+$font-size-small: .86em;
 //
 $color-navy:#083B87;
 $color-blue:#01ACEE;
 $color-soft-blue:#F1F6FF;
+$color-yellow:#FBBE00;
+
 //
 $font-family:'Open Sans', sans-serif;

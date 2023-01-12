@@ -368,7 +368,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -411,11 +411,15 @@ a {
   background-color: #01ACEE;
 }
 
+.Header {
+  border-bottom: 1px solid #ddd;
+  height: 68px;
+}
 .Header .container {
   display: flex;
   align-items: center;
-  height: 64px;
   position: relative;
+  height: 100%;
 }
 .Header-logo img {
   width: 144px;
@@ -529,4 +533,40 @@ a {
   border-left: 0;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
+}
+
+.Navigation {
+  height: 50px;
+  background-color: #F1F6FF;
+}
+.Navigation .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.Navigation-item {
+  margin-right: 10px;
+  font-size: 0.86em;
+}
+
+.Showcase {
+  text-align: center;
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #083B87;
+}
+
+.Search {
+  background-color: #FBBE00;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.Search-form {
+  position: relative;
+  display: flex;
+}
+.Search .asd {
+  position: absolute;
+  right: 0;
 }
