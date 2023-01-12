@@ -363,6 +363,10 @@ td {
   padding: 0;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 .container {
   max-width: 1200px;
   margin-left: auto;
@@ -384,20 +388,27 @@ a {
   fill: currentColor;
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-}
-
 .button {
   display: inline-flex;
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
   height: 40px;
-  background-color: #01ACEE;
+  background-color: transparent;
   color: #fff;
   font-weight: bold;
   border-radius: 3px;
+}
+.button-icon {
+  justify-content: center;
+  color: black;
+  padding-left: 0;
+  padding-right: 0;
+  width: 40px;
+}
+.button-blue {
+  color: white;
+  background-color: #01ACEE;
 }
 
 .Header .container {
@@ -410,6 +421,8 @@ body {
   width: 144px;
 }
 .Header-switch {
+  position: relative;
+  left: 10px;
   margin-left: auto;
   background: transparent;
 }
@@ -419,7 +432,10 @@ body {
   }
 }
 .Header-menu {
-  display: none;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: 0.2s;
+  display: flex;
   position: absolute;
   left: 0;
   right: 0;
@@ -432,12 +448,22 @@ body {
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
 }
 .Header.menu-show .Header-menu {
-  display: flex;
+  opacity: 1;
+  transform: translateY(0);
 }
 @media (min-width: 768px) {
   .Header-menu {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0s;
     margin-left: auto;
-    display: flex;
+    flex-direction: row;
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
   }
 }
 .Header-menu-user {
@@ -446,6 +472,11 @@ body {
   margin-right: 10px;
   flex-direction: column;
   align-items: center;
+}
+@media (min-width: 768px) {
+  .Header-menu-user {
+    flex-direction: row;
+  }
 }
 .Header-menu-user a {
   display: inline-flex;
@@ -462,6 +493,11 @@ body {
   margin-top: 20px;
   justify-content: center;
 }
+@media (min-width: 768px) {
+  .Header-menu-property {
+    margin-top: 0;
+  }
+}
 .Header-menu-helper {
   margin-top: 20px;
   display: flex;
@@ -470,6 +506,7 @@ body {
 @media (min-width: 768px) {
   .Header-menu-helper {
     margin-left: 20px;
+    margin-top: 0;
   }
 }
 .Header-menu-helper select {

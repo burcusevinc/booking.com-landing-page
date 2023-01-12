@@ -18,6 +18,9 @@
 
   //açılır menü svg'si, mobilde gözükmeli
   &-switch {
+    //mevcut olan pozisyondan itibaren kaydırır
+    position: relative;
+    left: 10px;
     //sola yasladık:
     margin-left: auto;
     background: transparent;
@@ -30,8 +33,14 @@
 
   //yanyana menü mobilde gözükmeyecek
   &-menu {
+
+    //menünün mobilde açılma efekti verildi:
+    opacity: 0;
+    transform: translateX(100%);
+    transition: .2s;
+
     //768px ve altında menü gözükmeyecek.
-    display: none;
+    display: flex;
     //min-width 768 px olunca menü gözükecek.
     //containerı baz alması için, containera position:relative verdik.
     //serbest konumlandırma yapmak için:
@@ -51,14 +60,24 @@
 
     //görünür olduğunda display:flex özelliği alır.
       .Header.menu-show & {
-        display: flex;
+        opacity: 1;
+        transform: translateY(0);
       }
 
     @include mq("tablet") {
+      opacity: 1;
+      transform: translateY(0);
+      transition: 0s;
       //en sağa alır
       margin-left: auto;
-      //yanyana dizer
-      display: flex;
+      flex-direction: row;
+      //daha önce verilen tüm position değerlerini sıfırlar
+      position: static;
+      box-shadow: none;
+      background-color:transparent;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
     }
 
     //inline elementler yükseklik ve genişlik alamaz,
@@ -69,6 +88,9 @@
       margin-right: 10px;
       flex-direction: column;
       align-items: center;
+      @include mq("tablet"){
+        flex-direction: row;
+      }
       a {
         //yazıları ortalamak için:
         display: inline-flex;
@@ -88,6 +110,9 @@
     &-property {
       margin-top: 20px;
       justify-content: center;
+      @include mq("tablet"){
+        margin-top: 0;
+      }
     }
 
     &-helper {
@@ -95,8 +120,9 @@
       display: flex;
       justify-content: center;
 
-      @include mq {
+      @include mq("tablet") {
         margin-left: 20px;
+        margin-top: 0;
       }
 
       select {
