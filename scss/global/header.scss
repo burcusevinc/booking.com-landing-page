@@ -1,14 +1,16 @@
+$Header-height:68px;
+
 .Header {
-  border-bottom: 1px solid #ddd;
-  height: 68px;
+  // border-bottom: 1px solid #ddd;
+  height: $Header-height;
+
   .container {
+    position: relative;
     //normalde div block element olduğu için altalta yazıldı
     //elemanlar yanyana gelir, esnek kutu modeline geçerler
     display: flex;
     //dikeyde ortalar
     align-items: center;
-
-    position: relative;
     height: 100%;
   }
 
@@ -25,7 +27,6 @@
     left: 10px;
     //sola yasladık:
     margin-left: auto;
-    background: transparent;
     //include : mq mixin'ini getir.
     //default olarak, tablet mixini çalışır: min-width:768px olunca gözükmez
     @include mq {
@@ -35,10 +36,10 @@
 
   //yanyana menü mobilde gözükmeyecek
   &-menu {
-
+    pointer-events: none;
     //menünün mobilde açılma efekti verildi:
     opacity: 0;
-    transform: translateX(100%);
+    // transform: translateX(100%);
     transition: .2s;
 
     //768px ve altında menü gözükmeyecek.
@@ -46,10 +47,10 @@
     //min-width 768 px olunca menü gözükecek.
     //containerı baz alması için, containera position:relative verdik.
     //serbest konumlandırma yapmak için:
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
-    top: 100%;
+    top: $Header-height;
     padding-right: $gutter;
     padding-left: $gutter;
     padding-bottom: 20px;
@@ -62,13 +63,17 @@
 
     //görünür olduğunda display:flex özelliği alır.
       .Header.menu-show & {
+        pointer-events: auto;
         opacity: 1;
-        transform: translateY(0);
+        // transform: translateY(0);
+
       }
 
     @include mq("tablet") {
+
+      pointer-events: auto;
       opacity: 1;
-      transform: translateY(0);
+      // transform: translateY(0);
       transition: 0s;
       //en sağa alır
       margin-left: auto;
@@ -85,15 +90,16 @@
     //inline elementler yükseklik ve genişlik alamaz,
     //yani a elementi, bu sebeple display:flex kullanıldı
     &-user {
-      width: 100%;
-      display: flex;
       margin-right: 10px;
+      display: flex;
+      // margin-right: 10px;
       flex-direction: column;
       align-items: center;
       @include mq("tablet"){
         flex-direction: row;
       }
       a {
+        width: 100&;
         //yazıları ortalamak için:
         display: inline-flex;
         align-items: center;
